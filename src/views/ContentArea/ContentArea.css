@@ -1,0 +1,12 @@
+.content-area {
+    /* border: 1px grey solid; */
+    width: calc(100% - 15rem - 2px);
+    height: 100%;
+    position: absolute;
+    background-color: #f3f3f3;
+    /* color: white; */
+    color: black;
+    overflow: hidden;
+    left: 15rem;
+    overflow-y: auto;
+}

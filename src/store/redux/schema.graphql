@@ -1,0 +1,27 @@
+type slideshow @model
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"], queries: [get, list], mutations: [delete], operations: [delete, read]},
+      {allow: groups, groups: ["Users"], queries: [get, list], operations: [read]},
+      {allow: owner, ownerField: "owner", operations: [create, update, delete, read]}
+    ])
+{
+  id: ID!
+  title: String!
+  slides: [slide] @connection(name: "slides")
+  owner: String
+}
+
+type slide @model
+  @auth(rules: [
+      {allow: groups, groups: ["Admins"], queries: [get, list], mutations: [delete], operations: [delete, read]},
+      {allow: groups, groups: ["Users"], queries: [get, list], operations: [read]},
+      {allow: owner, ownerField: "owner", operations: [create, update, delete, read]}
+    ]){
+  id: ID!
+  content: String!
+  order: Int
+  config: String
+  slideshow: slideshow @connection(name: "slides")
+  owner: String
+  files: [String]
+}

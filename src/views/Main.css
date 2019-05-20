@@ -1,0 +1,86 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+.App {
+    position: absolute;
+    text-align: center;
+    top: 67px;
+    background-color: rgb(80, 80, 80);
+    height: calc(100% - 67px);
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.App-logo {
+    /* animation: App-logo-spin infinite 20s linear; */
+    height: 80px;
+}
+
+.App-header {
+    background-color: #4266b2;
+    height: 4rem;
+    /* padding: 10px 0; */
+    color: white;
+    position: relative;
+    padding-left: 2rem;
+    border: 1px #4266b2 solid;
+    float: left;
+}
+
+.App-title {
+    font-size: 1.5em;
+    color: white;
+    text-align: left;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+.NavBar .active {
+    background-color: #693484;
+}
+
+.button {
+    width: auto;
+    display: inline-block;
+    border: .5px solid rgb(99, 99, 99);
+    border-radius: 3px;
+    margin: 3px;
+    padding: 3px;
+}
+.button:hover {
+    background-color: #97b1e7;;
+    cursor: pointer;
+}
+
+div[class^="Nav__navBar"] {
+    background-color: #4266b2;;
+    color: white;
+    border: 0px solid #4266b2;;
+}
+
+div[class^="Nav__navBar"] div  {
+    border: 0px solid #4266b2;;;
+    background-color: #4266b2;;
+
+}
+
+#root div:nth-of-type(1) button {
+    background-color: #4266b2;;
+    color: white;
+    border: 1px white solid;
+}

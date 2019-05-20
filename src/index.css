@@ -1,0 +1,38 @@
+html {
+    background: #4266b2;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#root {
+    background: #4266b2;
+}
+
+div[class^="Form__formSection"] {
+    border: 2px grey solid;
+    color: black;
+}
+
+
+div.options-button {
+    cursor: copy;
+    width: calc(1.2rem - 0.4px);
+    height: calc(1.2rem - 0.4px);
+    border: 0.2px white solid;
+    position: relative;
+    font-size: 0.1px;
+}
+
+div.options-button > div.options-bar {
+    width: 70%;
+    height: 10%;
+    background-color: white;
+    margin: 17% auto;
+    /* position: relative; */
+    display: block;
+    cursor: copy;
+}

@@ -1,0 +1,40 @@
+.edit-guide {
+    width: 100%;
+}
+
+.edit-guide .preview-guide-header .title {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.edit-guide-content {
+    width: 80%;
+    margin: auto;
+    border: 2px solid #d77900;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+.edit-guide textarea{
+    width: 100%;
+    /* min-height: 3rem; */
+    height: 1rem;
+}
+
+.edit-guide .reference-link{
+    margin: 1rem 0;
+}
+
+.edit-guide .editing-bar{
+    width: fit-content;
+    margin: auto;
+}
+
+.edit-guide .editing-bar .button {
+    display: inline-block;
+    margin: 1rem;
+    width: 5rem;
+    text-align: center;
+}

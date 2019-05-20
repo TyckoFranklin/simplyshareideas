@@ -1,0 +1,67 @@
+/* .preview-guide {
+    width: 100%;
+}
+
+        .preview-guide .preview-guide-header .title {
+            font-size: 2rem;
+            margin: 2rem;
+        }
+
+.preview-guide-content {
+    width: 80%;
+    margin: auto;
+    border: 2px solid #d77900;
+    border-radius: 5px;
+    padding: 2rem;
+    margin-top:2rem;
+    text-align: left;
+} */
+
+.edit-slides .edit-slides-header {
+    margin: 2rem auto;
+    height: 2rem;
+}
+
+.edit-slides .edit-slides-header .filter,
+.edit-slides .edit-slides-header .filter-button {
+    float: left;
+}
+
+.edit-slides .edit-slides-header .filter {
+    margin: 3px 2rem;
+    padding: 3px;
+}
+
+.edit-slides .edit-slides-header .filter input {
+    margin: 0 0 0 1rem;
+}
+
+.edit-slides .slideshow {
+    padding: 2rem;
+    margin: 2rem auto;
+    cursor: pointer;
+    width: 30%;
+    border: 2px solid #4266b2;
+    border-radius: 5px;
+}
+.edit-slides .user:hover {
+    font-size: 1.3rem;
+}
+
+.edit-slides .slideshow {
+    display: block;
+    width: 39%;
+}
+
+.edit-slides .slideshow img{
+    width: 100%;
+}
+
+.edit-slides .slideshow textarea{
+    width: 100%;
+}
+
+.edit-slides .user .user-email {
+    display: inline-block;
+    width: 59%;
+}

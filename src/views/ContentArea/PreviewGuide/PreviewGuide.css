@@ -1,0 +1,22 @@
+.preview-guide {
+    width: 100%;
+}
+
+        .preview-guide .preview-guide-header .title {
+            font-size: 2rem;
+            margin: 2rem;
+        }
+
+.preview-guide-content {
+    width: 50%;
+    margin: 2rem auto;
+    border: 2px solid #d77900;
+    border-radius: 5px;
+    padding: 2rem;
+    text-align: left;
+}
+
+.preview-guide .guides-header {
+    margin: 2rem auto;
+    height: 2rem;
+}
