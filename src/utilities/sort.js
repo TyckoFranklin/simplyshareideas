@@ -1,7 +1,6 @@
 
 export const sortMapByProperty = (map, property) => {
     let a = new Map();
-    console.log(map);
     return new Map([...map.entries()].sort((a, b)=>{
         if(a[1][property] < b[1][property]){
             return -1;

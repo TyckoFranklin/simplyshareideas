@@ -73,18 +73,12 @@ body .overlay {
 
 .overlay .display-area {
     width: 70%;
-    height: 80%;
-    /* top:10%; */
-    position: relative;
+    height: 100%;
+    top:0%;
+    right:15%;
+    position: absolute;
     margin: auto;
 }
-
-/* .overlay .display-area.from-right {
-    animation:  from-right-to-normal 2s;
-}
-.overlay .display-area.from-left {
-    animation:  from-left-to-normal 2s;
-} */
 
 .overlay .display-area img {
     width: 100%;
@@ -96,6 +90,37 @@ body .overlay {
     left: 1rem;
     top: 1rem;
     position: absolute;
+}
+
+.overlay .slide-control {
+    color: white;
+    font-size: 16px;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+    opacity: 0;
+}
+
+.overlay .slide-control.show {
+    opacity: 1;
+}
+
+.overlay .slide-control:hover {
+    opacity: 1;
+}
+.overlay .slide-control:active {
+    opacity: 1;
+}
+
+.overlay .slide-control-option {
+    display: inline-block;
+    margin: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.overlay .slide-control-toggle {
+    opacity: 1;
 }
 
 .overlay .display-container {
@@ -136,16 +161,73 @@ body .overlay {
     margin: 4rem 0px;
 }
 
-@keyframes from-left-to-normal {
-    0% {}
-    100% {
-        transform: translate(-200px, 0px)
-    }
+.overlay .display-area.hidden {
+    display: none;
+
 }
 
-@keyframes from-right-to-normal {
-    0% {}
-    100% {
-        transform: translate(200px, 0px)
-    }
+.overlay .display-area.incoming.left-to-right {
+    right: calc(15% + 5000px);
 }
+
+.overlay .display-area.incoming.left-to-right.animate {
+    transform: translate(5000px, 0px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.overlay .display-area.outgoing.left-to-right {
+    right: 15%;
+}
+
+.overlay .display-area.outgoing.left-to-right.animate {
+    transform: translate(5000px, 0px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.overlay .display-area.incoming.right-to-left {
+    right: calc(15% - 5000px);
+}
+
+.overlay .display-area.incoming.right-to-left.animate {
+
+    transform: translate(-5000px, 0px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.overlay .display-area.outgoing.right-to-left {
+    right: 15%;
+}
+
+.overlay .display-area.outgoing.right-to-left.animate {
+    transform: translate(-5000px, 0px);
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.slideshow .user-name {
+    width: 70%;
+    display: inline-block;
+}
+
+.slideshow .export {
+    width: 28%;
+    display: inline-block;
+    margin: auto;
+}
+.slideshow .export:hover,
+.slideshow .user-name:hover {
+    background-color: #cac9c9;
+}
+
+
+/* .export-render {
+    position: absolute;
+    right: 5000px;
+} */

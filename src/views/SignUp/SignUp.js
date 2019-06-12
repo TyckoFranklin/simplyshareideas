@@ -46,7 +46,6 @@ const logger = new Logger('SignUp');
 export default class SignUp extends AuthPiece {
     constructor(props) {
         super(props);
-        console.log("there");
         this._validAuthStates = ['signUp'];
         this.signUp = this.signUp.bind(this);
         this.sortFields = this.sortFields.bind(this);
@@ -224,7 +223,6 @@ export default class SignUp extends AuthPiece {
                             if(field.key === 'username'){
                                 return null;
                             }
-                            console.log(field.key)
                             return field.key !== 'phone_number' ? (
                                 <FormField theme={theme} key={field.key}>
                                 {

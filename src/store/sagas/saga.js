@@ -64,7 +64,6 @@ import uuid from 'uuid';
 
 function* createSlideshow(action) {
     const result = yield API.graphql(graphqlOperation(mutations.createSlideshow, { input: { ...action.payload } }));
-    console.log(result);
     yield put({
         type: actions.ADD_SLIDESHOW,
         payload: new Map([
@@ -85,13 +84,10 @@ function* createSlide(action) {
         contentType: 'image/png',
         level: 'public',
     })
-    console.log("resultPicture", resultPicture);
 
     const checking = yield Storage.get(resultPicture.key);
-    console.log("checking", checking);
 
     const resultSlide = yield API.graphql(graphqlOperation(mutations.createSlide, { input: { ...action.payload, pictures: undefined, files: [resultPicture.key] } }));
-    console.log("resultSlide", resultSlide);
     yield put({
         type: actions.ADD_SLIDE,
         payload: new Map([
@@ -100,7 +96,6 @@ function* createSlide(action) {
     })
 } else{
     const resultSlide = yield API.graphql(graphqlOperation(mutations.createSlide, { input: { ...action.payload, pictures: undefined } }));
-    console.log("resultSlide", resultSlide);
     yield put({
         type: actions.ADD_SLIDE,
         payload: new Map([
@@ -143,7 +138,6 @@ export function* handleListSlideshows() {
 
 function* listSlides(action) {
     const result = yield API.graphql(graphqlOperation(queries.listSlides, {limit:100}));
-    console.log(result);
     const payload = new Map();
     const files = new Map();
     let filesTemp = [];
@@ -178,7 +172,10 @@ export function* handleListSlides() {
 
 function* deleteSlide(action) {
     const result = yield API.graphql(graphqlOperation(mutations.deleteSlide, {input:{id:action.payload}}));
-    console.log("DELETED", result);
+    yield put({
+        type: actions.REMOVE_SLIDE,
+        payload: action.payload
+    })
 }
 
 export function* handleDeleteSlide() {
@@ -190,7 +187,6 @@ function* updateSlide(action) {
     order,
     config} = action.payload.value;
     const result = yield API.graphql(graphqlOperation(mutations.updateSlide, {input:{id:action.payload.key, content, order,config}}));
-    console.log("UPDATED", result);
 }
 
 export function* handleUpdateSlide() {

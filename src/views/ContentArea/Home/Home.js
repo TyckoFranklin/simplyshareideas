@@ -19,7 +19,7 @@ class Home extends Component {
 
 
     render() {
-
+        // setTimeout(()=>{document.querySelector("#ha").click()}, 5000);
         return (
             <div className="home" >
                 <h1>Welcome to Simply Share Ideas!</h1>

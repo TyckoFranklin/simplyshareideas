@@ -107,7 +107,6 @@ export default class SignIn extends AuthPiece {
     }
 
     showComponent(theme) {
-        console.log("WE WELL WELL");
         const {  hide = [], override=[] } = this.props;
         if (hide && hide.includes(SignIn)) { return null; }
         const hideSignUp = !override.includes('SignUp') && hide.some(component => component === SignUp);

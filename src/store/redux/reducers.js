@@ -28,6 +28,14 @@ export const slides = (state = new Map(), action) => {
         case A.ADD_SLIDE: {
             return combineMaps(state, action.payload);
         }
+        case A.REMOVE_SLIDE: {
+            let newState = new Map();
+            for(let [key, value] of state){
+                newState.set(key, value);
+            }
+            newState.delete(action.payload);
+            return newState;
+        }
         default: {
             return state;
         }

@@ -33,7 +33,7 @@ class EditSlideShow extends Component {
     }
 
     handleReturn = () => {
-        this.setState({ showMainContent: false })
+        this.setState({ showMainContent: true, slideshowId: undefined })
     }
 
     handleSlidshowClick = (key, owner) => {
@@ -107,10 +107,6 @@ class EditSlideShow extends Component {
         }
     }
 
-    handleDeleteSlide = (key) => {
-        this.props.deleteSlide(key);
-    }
-
     renderSlideshowList = () => {
         let elements = [];
         if (this.state.createSlideshow) {
@@ -153,12 +149,12 @@ class EditSlideShow extends Component {
         let elements = [];
         const { sortedItems } = this.state;
         for (let [key, value] of sortedItems) {
-            if (!value.slideshow || !this.props.slideshows.has(value.slideshow.id)) {
+            if (!value.slideshow || this.state.slideshowId !== value.slideshow.id) {
                 continue;
             }
             elements.push(
                 <div key={`slideshow${key}`} className="slideshow">
-                    <div className="button" onClick={()=>this.handleDeleteSlide(key)} >
+                    <div className="button" onClick={()=>this.props.deleteSlide(key)} >
                         delete
                     </div>
                     <div className="button" onClick={()=>this.handleSave(key)} >
@@ -200,16 +196,20 @@ class EditSlideShow extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             !this.state.showSlideshow ? <div className="edit-slides">
                 <div className="edit-slides-header">
-                    <div className="filter" >
-                        <label>Filter Name</label>
-                        <input type="text" value={this.state.filterText} onChange={this.handleFilterChange}></input>
-                    </div>
-                    <div className="button filter-button" onClick={this.handleFilterReset}>Reset Filter</div>
-                    <div className="button filter-button" onClick={this.handleAddSlideshow}>Add New Slideshow</div>
+                    {this.state.showMainContent ?
+                    <React.Fragment>
+                        <div className="filter" >
+                            <label>Filter Name</label>
+                            <input type="text" value={this.state.filterText} onChange={this.handleFilterChange}></input>
+                        </div>
+                        <div className="button filter-button" onClick={this.handleFilterReset}>Reset Filter</div>
+                        <div className="button filter-button" onClick={this.handleAddSlideshow}>Add New Slideshow</div>
+                    </React.Fragment>
+                    :
+                    <div className="button filter-button" onClick={this.handleReturn}>Return To Slideshow List</div>}
                 </div>
                 <div className="edit-slides-container">
                     {this.state.showMainContent ? this.renderSlideshowList() : this.renderSlideshow()}
