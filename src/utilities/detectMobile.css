@@ -1,0 +1,6 @@
+/* Smartphones ----------- */
+@media only screen and (max-width: 760px) {
+    .mobile-detection-element {
+        display: none;
+    }
+}

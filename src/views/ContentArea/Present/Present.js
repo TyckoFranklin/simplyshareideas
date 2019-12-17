@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Present.css';
-import { exportCSS } from './export';
+import { exportCSS, scrollJavaScript } from './export';
 import { overlay } from '../overlay'
 import ReactMarkdown from 'react-markdown';
 import { sortMapByProperty } from '../../../utilities/sort'
@@ -41,6 +41,7 @@ class Present extends Component {
                 myWindow.document.body.innerHTML = "<body></body>";
                 myWindow.document.write(htmlBody);
                 myWindow.document.write(exportCSS);
+                myWindow.document.write(scrollJavaScript);
             }, 5000);
             this.setState({renderExport:false});
             // document.body.innerHTML = this.exportRef.outerHTML;
@@ -340,7 +341,14 @@ class Present extends Component {
                     <div className="slide-info">
                         Slide {i+1} of {sorted.length}
                     </div>
-
+                    <div className="slide-control">
+                    <div className="slide-control-option decrease">
+                        Decrease Size
+                    </div>
+                    <div className="slide-control-option increase">
+                        Increase Size
+                    </div>
+                </div>
                     <div key={i+1} className={`display-area current`}>
                         <ReactMarkdown source={contentCurrent} />
                     </div>
